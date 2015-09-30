@@ -1,6 +1,20 @@
-console.log(angular.version.full);
+var app = angular.module('timezoneFinderApp',['ngRoute']);
 
-var app = angular.module('timezoneFinderApp',[]);
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+    $routeProvider.
+        when('/welcome', {
+            templateUrl: 'welcome.html',
+            controller: 'MainController'
+        }).
+        when('/list' ,{
+            templateUrl: 'list.html',
+            controller: 'MainController'
+        }).
+        otherwise({
+            redirectTo: '/welcome'
+        });
+}]);
 
 app.controller('MainController', ['$scope', function ($scope) {
     // Defines our cities.
