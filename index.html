@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Timezone Finder</title>
+
+</head>
+<body ng-app="timezoneFinderApp">
+    <p>Hello World! Welcome to Timezone Finder.</p>
+    <div ng-controller="MainController">
+        <label>Select a city</label>
+        <select ng-model="selectedCity" ng-options="city.name for city in cities"></select>
+        <p>The timezone in {{selectedCity.name}} is {{selectedCity.timezone}}.</p>
+    </div>
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/bundle.js"></script>
+</body>
+</html>
